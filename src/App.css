@@ -1,0 +1,8 @@
+:root{
+  color-scheme: light dark;
+}
+body{
+  background: light-dark(#faf1df,black);
+  color: light-dark(black,white);
+  font-family: "Roboto", sans-serif;
+}
