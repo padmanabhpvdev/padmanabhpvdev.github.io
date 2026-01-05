@@ -5,7 +5,7 @@ function Projects(){
                 <h2>My Projects</h2>
             </div>
             <div className="container py-5 mt-5">
-                <h5 className="text-center"><a href=''>Wi-Fi Protected Access Powerpoint <code>WPA.pptx</code></a></h5>
+                <h5 className="text-center"><a href='' download>Wi-Fi Protected Access Powerpoint <code>WPA.pptx</code></a></h5>
             </div>
             <h1>&nbsp;</h1>
             <h1>&nbsp;</h1>
