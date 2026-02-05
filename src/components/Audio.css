@@ -1,0 +1,218 @@
+/* ===========================================
+   CUSTOM AUDIO PLAYER STYLES (CSS ONLY)
+   =========================================== */
+
+/* Hide all browser-specific controls except the timeline/progress bar */
+audio {
+  width: 100%;
+  max-width: 600px;
+  height: 40px;
+  background: transparent;
+  border-radius: 8px;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Target all browsers to hide everything except timeline */
+
+/* Webkit (Chrome, Safari, Edge Chromium) */
+audio::-webkit-media-controls {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  border-radius: 8px;
+  padding: 0;
+}
+
+audio::-webkit-media-controls-panel {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  height: 40px;
+  border-radius: 8px;
+}
+
+/* Hide play button, time displays, volume, and other controls */
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-timeline-container,
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display,
+audio::-webkit-media-controls-mute-button,
+audio::-webkit-media-controls-volume-slider-container,
+audio::-webkit-media-controls-volume-slider,
+audio::-webkit-media-controls-toggle-closed-captions-button,
+audio::-webkit-media-controls-fullscreen-button,
+audio::-webkit-media-controls-rewind-button,
+audio::-webkit-media-controls-return-to-realtime-button,
+audio::-webkit-media-controls-seek-back-button,
+audio::-webkit-media-controls-seek-forward-button,
+audio::-webkit-media-controls-overlay-enclosure,
+audio::-webkit-media-controls-overlay-play-button {
+  display: none !important;
+}
+
+/* Style only the timeline/progress bar */
+audio::-webkit-media-controls-timeline {
+  flex: 1;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  margin: 0 15px;
+  cursor: pointer;
+}
+
+/* Style the timeline progress (filled part) */
+audio::-webkit-media-controls-timeline::-webkit-slider-runnable-track {
+  height: 6px;
+  background: linear-gradient(90deg, #0d6efd 0%, #20c997 100%);
+  border-radius: 3px;
+  border: none;
+}
+
+/* Style the timeline thumb */
+audio::-webkit-media-controls-timeline::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+  margin-top: -5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  border: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+/* Show thumb on hover */
+audio:hover::-webkit-media-controls-timeline::-webkit-slider-thumb {
+  opacity: 1;
+}
+
+/* Firefox */
+audio::-moz-media-controls-panel {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%) !important;
+  border-radius: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 0 12px !important;
+  height: 40px !important;
+}
+
+/* Hide Firefox controls */
+audio::-moz-media-controls-play-button,
+audio::-moz-media-controls-current-time-display,
+audio::-moz-media-controls-time-remaining-display,
+audio::-moz-media-controls-mute-button,
+audio::-moz-media-controls-volume-slider,
+audio::-moz-media-controls-fullscreen-button {
+  display: none !important;
+}
+
+/* Style Firefox timeline */
+audio::-moz-range-track {
+  background: rgba(255, 255, 255, 0.1) !important;
+  height: 6px !important;
+  border-radius: 3px !important;
+  border: none !important;
+  flex: 1 !important;
+  margin: 0 15px !important;
+}
+
+audio::-moz-range-progress {
+  background: linear-gradient(90deg, #0d6efd 0%, #20c997 100%) !important;
+  height: 6px !important;
+  border-radius: 3px !important;
+}
+
+audio::-moz-range-thumb {
+  width: 16px !important;
+  height: 16px !important;
+  border-radius: 50% !important;
+  background: white !important;
+  cursor: pointer !important;
+  border: none !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3) !important;
+  opacity: 0 !important;
+  transition: opacity 0.2s ease !important;
+}
+
+audio:hover::-moz-range-thumb {
+  opacity: 1 !important;
+}
+
+/* Edge (Legacy) */
+audio::-ms-media-controls-panel {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%) !important;
+  border-radius: 8px !important;
+}
+
+audio::-ms-media-controls-play-button,
+audio::-ms-media-controls-current-time-display,
+audio::-ms-media-controls-time-remaining-display,
+audio::-ms-media-controls-mute-button,
+audio::-ms-media-controls-volume-slider,
+audio::-ms-media-controls-fullscreen-button {
+  display: none !important;
+}
+
+audio::-ms-fill-lower {
+  background: linear-gradient(90deg, #0d6efd 0%, #20c997 100%) !important;
+}
+
+audio::-ms-fill-upper {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+audio::-ms-thumb {
+  width: 16px !important;
+  height: 16px !important;
+  background: white !important;
+  border-radius: 50% !important;
+}
+
+/* Add custom play/pause button outside audio element */
+.custom-play-pause-btn {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.custom-play-pause-btn:hover {
+  background: linear-gradient(135deg, #0a58ca 0%, #084298 100%);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.custom-play-pause-btn i {
+  font-size: 14px;
+}
+
+/* Custom audio wrapper */
+.audio-player-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  border-radius: 8px;
+  padding: 0 60px 0 60px; /* Space for custom buttons */
+  height: 40px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
