@@ -51,6 +51,63 @@ const BlockQuote = ({ children }) => {
   );
 };
 
+const Image = ({ src, alt, title }) => {
+  if (title) {
+    return (
+      <figure className="figure">
+        <img 
+          src={src} 
+          alt={alt || ''} 
+          className="figure-img img-fluid"
+          loading="lazy"
+        />
+        <figcaption className="figure-caption text-center mt-2">{title}</figcaption>
+      </figure>
+    );
+  }
+
+  return (
+    <img 
+      src={src} 
+      alt={alt || ''} 
+      className="img-fluid rounded shadow"
+      loading="lazy"
+    />
+  );
+};
+const Table = ({ children }) => {
+  return (
+    <div className="table-responsive">
+      <table className="table table-striped table-bordered table-hover">
+        {children}
+      </table>
+    </div>
+  );
+};
+
+const TableHeader = ({ children }) => {
+  return (
+    <th className="align-middle text-nowrap">
+      {children}
+    </th>
+  );
+};
+
+const TableCell = ({ children }) => {
+  return (
+    <td className="align-middle">
+      {children}
+    </td>
+  );
+};
+const TableRow = ({ children, isHeader = false }) => {
+  return (
+    <tr className={isHeader ? 'table-dark' : ''}>
+      {children}
+    </tr>
+  );
+};
+
 export default function BlogPost() {
   const SITE_NAME = "Padmanabh's Blog";
   const { slug } = useParams();
@@ -60,7 +117,8 @@ export default function BlogPost() {
 
   useEffect(() => {
   // Fetch markdown content from your GitHub repo
-  fetch(`https://raw.githubusercontent.com/padmanabhpvdev/my-blog-contents/main/${slug}/post.md`)
+  // 
+  fetch(`/posts/${slug}/post.md`)
     .then(res => {
       if (!res.ok) {
         throw new Error('Markdown file not found');
@@ -73,7 +131,8 @@ export default function BlogPost() {
       setContent('# Post Not Found\n\nThis post could not be loaded.');
     });
   
-  fetch('https://raw.githubusercontent.com/padmanabhpvdev/my-blog-contents/main/posts.json')
+  // fetch('https://raw.githubusercontent.com/padmanabhpvdev/my-blog-contents/main/posts.json') 
+  fetch(`/posts/posts.json`)
     .then(res => {
       if (!res.ok) {
         throw new Error('Failed to load posts.json');
@@ -124,7 +183,7 @@ export default function BlogPost() {
       <div className="blog-content">
         <Markdown remarkPlugins={[remarkGfm]} 
             components={
-              {code:CodeBlock, blockquote:BlockQuote}
+              {code:CodeBlock, blockquote:BlockQuote, img:Image, table:Table,th:TableHeader,td:TableCell,tr:TableRow}
         }>
           {content}
         </Markdown>
