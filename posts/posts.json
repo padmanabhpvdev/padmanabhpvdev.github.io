@@ -1,10 +1,10 @@
 [
   {
-    "slug": "why-2sc5200-2sa1943-combo",
-    "title": "The Unsung Heroes of Hi-Fi: Why the 2SC5200 & 2SA1943 Combo Still Rocks Amplifiers",
-    "date": "2026-01-26",
+    "slug": "lm3915-mono-bar-dot",
+    "title": "Bar/Dot Mono VU Meter using LM3914/3915/3916 IC",
+    "date": "2026-02-06",
     "category": "Electronics",
-    "desc": "In the world of audio amplification, certain components achieve legendary status. While newer, fancier, and often more expensive transistors emerge every year, there's one dynamic duo that continues to be the backbone of countless robust and great-sounding amplifiers: the 2SC5200 and 2SA1943 complimentary bipolar junction transistors (BJTs).",
-    "image": "https://5.imimg.com/data5/SELLER/Default/2023/1/TT/OP/HK/55526477/2sc5200-2sa1943-npn-transistor.jpeg"
+    "desc": "Adding a VU Meter (Volume Unit Meter) to your custom amplifier is like giving it a heartbeat. It provides that classic visual feedback that makes a DIY audio project look truly professional.",
+    "image": "https://raw.githubusercontent.com/padmanabhpvdev/my-blog-contents/main/lm3915-mono-bar-dot/LM3915(front).jpg"
   }
 ]
