@@ -117,8 +117,8 @@ export default function BlogPost() {
 
   useEffect(() => {
   // Fetch markdown content from your GitHub repo
-  // 
-  fetch(`/posts/${slug}/post.md`)
+  fetch(`https://raw.githubusercontent.com/padmanabhpvdev/my-blog-contents/main/${slug}/post.md`)
+  //fetch(`/posts/${slug}/post.md`)
     .then(res => {
       if (!res.ok) {
         throw new Error('Markdown file not found');
@@ -131,8 +131,8 @@ export default function BlogPost() {
       setContent('# Post Not Found\n\nThis post could not be loaded.');
     });
   
-  // fetch('https://raw.githubusercontent.com/padmanabhpvdev/my-blog-contents/main/posts.json') 
-  fetch(`/posts/posts.json`)
+   fetch('https://raw.githubusercontent.com/padmanabhpvdev/my-blog-contents/main/posts.json') 
+  //fetch(`/posts/posts.json`)
     .then(res => {
       if (!res.ok) {
         throw new Error('Failed to load posts.json');
